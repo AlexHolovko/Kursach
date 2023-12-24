@@ -1,0 +1,40 @@
+﻿<Window x:Class="Kursach.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursach"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Реєстрація гостя" Height="550" Width="550">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Ім'я:"/>
+            <TextBox x:Name="NameTextBox" Width="200" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Електронна пошта:"/>
+            <TextBox x:Name="EmailTextBox" Width="200" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Телефон:"/>
+            <TextBox x:Name="PhoneTextBox" Width="200" Margin="0,0,0,10"/>
+
+            <TextBlock><Run Language="uk-ua" Text="Тип номеру"/></TextBlock>
+            <ComboBox x:Name="RoomsTypeComboBox" Width="198"/>
+
+            <TextBlock Text="Дата заїзду:"/>
+            <DatePicker x:Name="CheckInDatePicker" Width="200" Margin="0,0,0,10"/>
+            <TextBlock Text="Час заїзду:"/>
+            <xctk:TimePicker x:Name="Arrivaltime" FormatString="HH" Width="200"/>
+            <TextBlock Text="Дата виїзду:"/>
+            <DatePicker x:Name="CheckOutDatePicker" Width="200" Margin="0,0,0,10"/>
+            <TextBlock Text="Час вийїзду:"/>
+            <xctk:TimePicker x:Name="Departuretime" FormatString="HH" Width="200"/>
+            <TextBlock Text=""/>
+            <Button Content="Зареєструвати" Click="RegisterButton_Click" Width="200"/>
+            <TextBlock Text=""/>
+            <Button Content="Вікно для редагування даних користувача" Click="OpenGuestDetailsButton_Click" Width="240"/>
+            <TextBlock Text=""/>
+            <Button Content="Інформація про гостей" Click="OpenGuestsTableButton_Click" Width="240"/>
+        </StackPanel>
+    </Grid>
+</Window>

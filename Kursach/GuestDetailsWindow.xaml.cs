@@ -27,22 +27,8 @@ namespace Kursach
                 if (NewCheckInDatePicker.SelectedDate.HasValue)
                     guest.CheckInDate = NewCheckInDatePicker.SelectedDate?.ToShortDateString();
 
-                if (NewArrivalTimePicker?.Value != null)
-                {
-                    TimeSpan arrivalTime = NewArrivalTimePicker.Value?.TimeOfDay ?? TimeSpan.Zero;
-                  //  guest.CheckArrival = arrivalTime.ToString("HH:mm:ss");
-                }
-
-                if (NewDepartureTimePicker?.Value != null)
-                {
-                    TimeSpan departureTime = NewDepartureTimePicker.Value?.TimeOfDay ?? TimeSpan.Zero;
-                //    guest.CheckDeparture = departureTime.ToString("HH:mm:ss");
-                }
-
                 if (NewCheckOutDatePicker.SelectedDate.HasValue)
                     guest.CheckOutDate = NewCheckOutDatePicker.SelectedDate?.ToShortDateString();
-
-               
 
                 if (NewRoomTypeComboBox.SelectedItem != null)
                     guest.RoomType = NewRoomTypeComboBox.SelectedItem as string;

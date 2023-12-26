@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kursach"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Реєстрація гостя" Height="550" Width="550">
+        Title="Реєстрація гостя" Height="500" Width="500" MinHeight="500" MinWidth="500">
     <Grid>
         <StackPanel Margin="20">
             <TextBlock Text="Ім'я:"/>
@@ -23,12 +23,8 @@
 
             <TextBlock Text="Дата заїзду:"/>
             <DatePicker x:Name="CheckInDatePicker" Width="200" Margin="0,0,0,10"/>
-            <TextBlock Text="Час заїзду:"/>
-            <xctk:TimePicker x:Name="Arrivaltime" FormatString="HH" Width="200"/>
             <TextBlock Text="Дата виїзду:"/>
             <DatePicker x:Name="CheckOutDatePicker" Width="200" Margin="0,0,0,10"/>
-            <TextBlock Text="Час вийїзду:"/>
-            <xctk:TimePicker x:Name="Departuretime" FormatString="HH" Width="200"/>
             <TextBlock Text=""/>
             <Button Content="Зареєструвати" Click="RegisterButton_Click" Width="200"/>
             <TextBlock Text=""/>

@@ -34,10 +34,10 @@ namespace Kursach
             DataContext = this;
         }
         private void OpenGuestsTableButton_Click(object sender, RoutedEventArgs e)
-        {
-            GuestsTableWindow guestsTableWindow = new GuestsTableWindow();
-            guestsTableWindow.Show();
-        }
+{
+    GuestsTableWindow guestsTableWindow = new GuestsTableWindow(users);
+    guestsTableWindow.Show();
+}
         private void InitializeUsers()
         {
             if (File.Exists(UsersFilePath))
@@ -65,7 +65,34 @@ namespace Kursach
                 }
             }
         }
+        private decimal CalculateStayPrice(string roomType, int numberOfDays)
+        {
+            // Додайте логіку для обчислення вартості на основі типу номера та кількості днів
+            decimal basePrice = 300; // Встановіть базову ціну за замовчуванням
+            decimal priceMultiplier = 1.0m;
 
+            switch (roomType)
+            {
+                case "Стандартний":
+                    priceMultiplier = 1.0m;
+                    break;
+                case "Двомісний":
+                    priceMultiplier = 1.5m;
+                    break;
+                case "Сімейний":
+                    priceMultiplier = 2.0m;
+                    break;
+                case "Люкс":
+                    priceMultiplier = 3.0m;
+                    break;
+                default:
+                    // Обробити невідомі типи номерів
+                    break;
+            }
+
+            decimal totalPrice = basePrice * priceMultiplier * numberOfDays;
+            return totalPrice;
+        }
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             string selectedRoomType = RoomsTypeComboBox.SelectedItem as string;
@@ -112,6 +139,14 @@ namespace Kursach
             UpdateUsersJsonFile();
 
             MessageBox.Show($"Бронювання номера {selectedFloor + 1}-{selectedRoom + 1} пройшло успішно. Ваш id: {userId}");
+
+            int numberOfDays = (checkOutDate.Value - checkInDate.Value).Days;
+
+            // Обчисліть загальну вартість
+            decimal totalPrice = CalculateStayPrice(selectedRoomType, numberOfDays);
+
+            MessageBox.Show($"Бронювання номера {selectedFloor + 1}-{selectedRoom + 1} пройшло успішно. Ваш id: {userId}\n" +
+                            $"Загальна вартість проживання: {totalPrice:C}");
         }
         private void OpenGuestDetailsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -207,7 +242,5 @@ namespace Kursach
         public string? CheckOutDate { get; set; }
         public string? RoomType { get; set; }
         public string? RoomNumber { get; set; }
-        public DateTime? CheckArrival { get; set; }
-        public DateTime? CheckDeparture { get; set; }
     }
 }

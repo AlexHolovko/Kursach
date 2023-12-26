@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Изменение данных гостя" Height="500" Width="500" MinHeight="500" MinWidth="500">
+        Title="Изменение данных гостя" Height="300" Width="300" MinHeight="300" MinWidth="300">
     <Grid>
         <StackPanel Margin="20">
             <TextBlock Text="ID або номер телефона гостя:"/>
@@ -15,13 +15,8 @@
 
             <TextBlock Text="Новая дата заїзду:"/>
             <DatePicker x:Name="NewCheckInDatePicker" Width="200" Margin="0,0,0,10"/>
-            <TextBlock Text="Новий час заїзду:"/>
-            <xctk:TimePicker x:Name="NewArrivalTimePicker" FormatString="HH" Width="200"/>
-
             <TextBlock Text="Нова дата виїзду:"/>
             <DatePicker x:Name="NewCheckOutDatePicker" Width="200" Margin="0,0,0,10"/>
-            <TextBlock Text="Новий час вийїзду:"/>
-            <xctk:TimePicker x:Name="NewDepartureTimePicker" FormatString="HH" Width="200"/>
             <TextBlock Text=""/>
             <Button Content="Оновити дані гостя" Click="UpdateGuestDataButton_Click" Width="201"/>
         </StackPanel>

@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Изменение данных гостя" Height="300" Width="300" MinHeight="300" MinWidth="300">
+        Title="Зміна даних гостя" Height="300" Width="300" MinHeight="300" MinWidth="300">
     <Grid>
         <StackPanel Margin="20">
-            <TextBlock Text="ID або номер телефона гостя:"/>
+            <TextBlock Text="ID або номер телефону гостя:"/>
             <TextBox x:Name="GuestIdOrPhoneNumberTextBox" Width="200" Margin="0,0,0,10"/>
-            <TextBlock Text="Новый тип номеру"/>
+            <TextBlock Text="Новий тип номеру"/>
             <ComboBox x:Name="NewRoomTypeComboBox" Width="198"/>
 
-            <TextBlock Text="Новая дата заїзду:"/>
+            <TextBlock Text="Нова дата заїзду:"/>
             <DatePicker x:Name="NewCheckInDatePicker" Width="200" Margin="0,0,0,10"/>
             <TextBlock Text="Нова дата виїзду:"/>
             <DatePicker x:Name="NewCheckOutDatePicker" Width="200" Margin="0,0,0,10"/>

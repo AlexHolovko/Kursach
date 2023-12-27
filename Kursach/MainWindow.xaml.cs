@@ -6,13 +6,15 @@ using System.Windows;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using Kursach;
+using System.Globalization;
+using System.Threading;
 
 namespace Kursach
 {
     public partial class MainWindow : Window
     {
-        private const string UsersFilePath = @"C:\file\users_data.json";
-        private const string HotelFilePath = @"C:\file\hotel_data.json";
+        private const string UsersFilePath = @"file\users_data.json";
+        private const string HotelFilePath = @"file\hotel_data.json";
         private const int Floors = 4;
         private const int RoomsPerFloor = 10;
         private int[,] hotelMatrix = new int[Floors, RoomsPerFloor];
@@ -32,6 +34,8 @@ namespace Kursach
             InitializeHotelMatrix();
             InitializeUsers();
             DataContext = this;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("uk-UA");
+            System.Threading.Thread.CurrentThread.CurrentCulture =  System.Globalization.CultureInfo.GetCultureInfo("uk-UA");
         }
         private void OpenGuestsTableButton_Click(object sender, RoutedEventArgs e)
 {
